@@ -1,0 +1,56 @@
+<DOCTYPE html>
+    <html lang="en-US">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>Gradient Text</title>
+    </head>
+
+    <body>
+        <input type="textarea" id="in" />
+        <input id="first" type="color" value="#FF0000" />
+        <input id="last" type="color" value="#00FF00" />
+        <button id="run"> Run </button>
+        <br />
+        <input type="textarea" id="out">
+        <script>
+            $(document).ready(function() {
+                $("#run").on("click", function() {
+                    $("#out").val('');
+                    for (var i = 0; i < $("#in").val().length; i++) {
+                        var charcur = $("#in").val().charAt(i);
+                        var camount = i / $("#in").val().length;
+                        var cl = lerpColor($("#first").val(), $("#last").val(), camount);
+                        $("#out").val($("#out").val() + "<span style='color: " + cl + "'>" + charcur + "</span>");
+                    }
+                });
+                /**
+                 * A linear interpolator for hexadecimal colors
+                 * @param {String} a
+                 * @param {String} b
+                 * @param {Number} amount
+                 * @example
+                 * // returns #7F7F7F
+                 * lerpColor('#000000', '#ffffff', 0.5)
+                 * @returns {String}
+                 */
+                function lerpColor(a, b, amount) {
+                    var ah = parseInt(a.replace(/#/g, ''), 16),
+                        ar = ah >> 16,
+                        ag = ah >> 8 & 0xff,
+                        ab = ah & 0xff,
+                        bh = parseInt(b.replace(/#/g, ''), 16),
+                        br = bh >> 16,
+                        bg = bh >> 8 & 0xff,
+                        bb = bh & 0xff,
+                        rr = ar + amount * (br - ar),
+                        rg = ag + amount * (bg - ag),
+                        rb = ab + amount * (bb - ab);
+                    return '#' + ((1 << 24) + (rr << 16) + (rg << 8) + rb | 0).toString(16).slice(1);
+                }
+            });
+        </script>
+    </body>
+
+    </html>
