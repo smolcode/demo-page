@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gradient Text</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap-reboot.min.css">
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     </head>
 
@@ -28,16 +29,6 @@
                         $("#out").val($("#out").val() + "<span style='color: " + cl + "'>" + charcur + "</span>");
                     }
                 });
-                /**
-                 * A linear interpolator for hexadecimal colors
-                 * @param {String} a
-                 * @param {String} b
-                 * @param {Number} amount
-                 * @example
-                 * // returns #7F7F7F
-                 * lerpColor('#000000', '#ffffff', 0.5)
-                 * @returns {String}
-                 */
                 function lerpColor(a, b, amount) {
                     var ah = parseInt(a.replace(/#/g, ''), 16),
                         ar = ah >> 16,
