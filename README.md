@@ -4,6 +4,6 @@
 
 <summary>Gradient Text</summary>
 
-### [Visit site](https://merishiu.github.io/demo-page/public/gradient-text.html)
+### [Visit site](https://yogurtcode.github.io/demo-page/public/gradient-text.html)
 
 </details>
