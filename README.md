@@ -4,6 +4,6 @@
 
 <summary>Gradient Text</summary>
 
-### [Visit site](https://poluxcode.github.io/demo-page/public/gradient-text.html)
+### [Visit site](https://smolcode.github.io/demo-page/public/gradient-text.html)
 
 </details>
